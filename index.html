@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css"rel="stylesheet" type=" text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+        <title>Погода</title>
+    </head> 
+    <body>
+        <div class="weather">
+            <div id="bg"></div>
+            <div class="top ">
+                <div class="left">
+                <div class='name-block'>
+                    <div class="city"></div>
+                </div>
+                <div class="temp"></div>
+                <div class="today"></div><div id='clock'></div> 
+                </div>
+                <div class="right">
+                    <div id="weather-icon"></div>
+                    <div class="desc"></div>
+                </div>
+ 
+            </div>
+            <div class="bottom">
+                <div class="calendar">
+                    <div class="day 1">Понедельник</div>
+                    <div class="day 2">Вторник</div>
+                    <div class="day 3">Среда</div>
+                    <div class="day 4">Четврег</div>
+                    <div class="day 5">Пятница</div>
+                </div>
+                <div class="border"></div>
+                <div class="block-wrapper">
+                    <div class='block'>
+                        <div class="block-header">
+                            Влажность
+                            <div class="icon-name soft" style="font-size: 50px" >5</div>
+                        </div>
+                        <p style="font-weight: bold;"><span class="humidity"></span>%</p>
+                        <div class="humidity-line"><div class='humidity-line-fill soft'></div></div>
+                    </div>
+                    <div class='block'>
+                        <div class="block-header">
+                            Ветер
+                            <div class="icon-name soft">,</div>
+                        </div>
+                        <div class='speed-container'><div class="speed">
+                            <div class="arrow soft">  </div>
+                            <p style="left: -25%; top: 45%">0</p>
+                            <p style="right: 105%; bottom: 30%">5</p>
+                            <p style="right: 70%; bottom: 85%">10</p>
+                            <p style="right: 15%; bottom: 85%">20</p>
+                            <p style="right: -20%; bottom: 30%">30</p>
+                            <p style="right: -30%; top: 40%">40</p>
+                        </div>
+                        <div class='speed-value'><span class="wind"></span> км/ч</div>
+                        </div>
+                    </div>
+                    <div class='block'>
+                        <div class="block-header">
+                            Облачность
+                            <div class="icon-name soft">3</div>
+                        </div>
+                        <p style="font-weight: bold; font-size: 18px;"><span class="clouds-block"></span>%</p>
+                        <div class="cloud-line"><div class='cloud-line-fill soft'></div></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="clock.js"></script>
+        <script src="weather.js"></script>
+        <script src="city.js"></script>
+        <script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
+        
+    </body>
+</html>
