@@ -57,7 +57,6 @@ function getCoordintes() {
   }
   navigator.geolocation.getCurrentPosition(success, error, options);
 }
-var coordinates=[59.9386,30.3141]
 function getCity(coordinates) {
   var xhr = new XMLHttpRequest();
   var lat = coordinates[0];
