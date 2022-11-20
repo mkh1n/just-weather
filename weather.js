@@ -138,7 +138,7 @@ function getWeather(){
     sunset.setMinutes(sunset.getMinutes() + offset);
     document.getElementById('sunset').innerText = sunset.getHours()+':'+ sunset.getMinutes()
 
-    document.querySelector('.humidity').innerHTML = res.data.list[0].main.humidity
+    document.querySelector('.humidity-value').innerHTML = res.data.list[0].main.humidity
     document.querySelector('.humidity-line-fill').style['width'] = res.data.list[0].main.humidity+'%'
     document.querySelector('.wind').innerHTML = Number(res.data.list[0].wind.speed).toFixed(0)
 
@@ -152,7 +152,6 @@ function getWeather(){
 
     document.querySelector('.desc').innerHTML = String(res.data.list[0].weather[0].description)[0].toUpperCase()+String(res.data.list[0].weather[0].description).slice(1)
     document.querySelector('.clouds-value').innerHTML = res.data.list[0].clouds.all
-    document.querySelector('.clouds-block').innerHTML = res.data.list[0].clouds.all
     document.querySelector('.cloud-line-fill').style['width'] = res.data.list[0].clouds.all+'%'
 
 

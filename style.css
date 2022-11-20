@@ -36,11 +36,25 @@ body{
 .day{
     background:var(--blue);
 }
+.day-holder{
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10%;
+}
+.day-border{
+    width: 0px;
+    border-left: #fff solid 2px;
+    height: 90%;
+    opacity: 0.5;
+}
 .dayIcon{
+    position: relative;
     font-family: weather;
     font-size:50px;
-    bottom:-2px;
-    position: absolute;
+    bottom:20px;
+    height: 41px;
 }
 #shortName{
     display: none;
@@ -90,6 +104,9 @@ body{
 }
 .name-block{
     text-align: center;
+}
+.name{
+    margin-bottom: 3px;
 }
 .city{
     font-size: 25px;
@@ -309,9 +326,14 @@ body{
     }
     .dayBlock{
         padding: 15px;
-        padding-top: 10px;
-        padding-bottom: 40px;
+        padding-top: 15px;
+        padding-bottom: 9px;
         background: rgb(255, 255, 255, 0.2);
+        border-radius: 15%;
+    }
+    .dayIcon{
+        bottom:29px;
+        height: 33px;
     }
     .day-border{
         display: none;
@@ -355,6 +377,12 @@ body{
     }
     .block{
         justify-content: unset;
+        background:none;
+    }
+    .block-wrapper{
+        background: rgb(255, 255, 255, 0.2);
+        border-radius: 15px 15px;
+        width: 90%;
     }
     .speed-container{
         display: flex;
