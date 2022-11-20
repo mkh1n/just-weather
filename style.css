@@ -33,42 +33,8 @@ body{
     background:var(--norm);
 }
 
-.dayBlock{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 25px;
-    padding-top: 10px;
-
-    border-radius: 10px 10px;
-    position: relative;
-    padding-bottom: 40px;
-}
-.day-holder{
-    display: flex;
-    align-items: center;
-    flex-direction:column;
-    color:#fff;
-    width: min-content;
-}
-.day-border{
-    position: relative;
-    top:10%;
-    opacity: 0.5;
-    height: 90%;
-    border-left: 2px solid #fff;
-}
-.dayTemp{
-    font-size: 18px;
-}
-.name{
-    font-size: 18px;
-    padding-bottom: 3px;
-    text-align: center;
-}
 .day{
-    --soft: rgb(109, 194, 250);
-    --norm: linear-gradient(45deg, rgb(64, 156, 218) 35%, rgb(49, 122, 218) 100%);
+    background:var(--blue);
 }
 .dayIcon{
     font-family: weather;
@@ -81,6 +47,8 @@ body{
     z-index: 0;
 
 }
+
+
 .night{
     --norm: linear-gradient(90deg, rgb(97, 13, 207) 0%, rgba(0,43,145,1) 51%, rgba(26,52,186,1) 100%);
     --soft: rgb(202, 165, 252);
@@ -106,14 +74,6 @@ body{
 .lightning{
     background-image: url('lightning.png');
     opacity: 0.3;
-}
-.snow{
-    background-image: url('snow.png');
-    opacity: 0.25;
-}
-.fog{
-    background-image: url('fog.png');
-    opacity: 0.8;
 }
 .weather-desc{
     display: flex;
@@ -147,7 +107,7 @@ body{
 }
 #weather-icon{
     font-size: 180px;
-    height: 80px;
+    height: 85px;
     line-height: 0;
 }
 .sun{
@@ -190,8 +150,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7px);
     height: 100%;
     width: 100%;
     border-radius: 20px 20px;
@@ -203,7 +163,11 @@ body{
     z-index: 200;
     width: 90%;
 }
-
+.day{
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px 10px;
+}
 .border{
     width: 90%;
     border-bottom: #fff solid 2px;
@@ -218,11 +182,11 @@ body{
 .icon-name{
     margin: auto 10px;
     line-height: 0.4;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: 6px;
+    padding-right: 6px;
     border-radius: 20px 20px;
     font-size: 30px; 
-    padding-bottom: 11px
+    padding-bottom: 10px
 }
 .block-header{
     display: flex;
@@ -358,6 +322,9 @@ body{
     .name{
         font-weight: bold;
     }
+    #shortName{
+        z-index: 7;
+    }
     .temp{
         font-size: 70px;
     }
@@ -388,18 +355,6 @@ body{
     }
     .block{
         justify-content: unset;
-        padding: 9px;
-        background: unset;
-    }
-    .block-wrapper{
-        background-color: rgb(255, 255, 255, 0.2);
-        border-radius: 20px 20px ;
-        width: 90%;
-        padding: 10px 0;
-    }
-    .block-header{
-        font-size: 15px;
-        font-weight: bold;
     }
     .speed-container{
         display: flex;

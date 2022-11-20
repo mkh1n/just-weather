@@ -20,6 +20,7 @@ if (mobValue){
   document.getElementById('pc-today').classList.add('today')
   document.getElementById('pc-clock').classList.add('clock')
 }
+var shortName = Number(getComputedStyle(document.getElementById('shortName')).zIndex)
 var days = [
   'Воскресенье',
   'Понедельник',
@@ -86,6 +87,7 @@ function getWeather(){
           let num = String(i/8);
           let date = new Date(String(res.data.list[i].dt_txt).replace(' ','T'));
           document.getElementById(num+'n').innerText = days[date.getDay()+7*mobValue]
+          document.getElementById(num+'n').innerText = days[date.getDay()+shortName]
 
           document.getElementById(num+'t').innerText = (String(res.data.list[i].main.temp)[0] === '-')?
           Number(res.data.list[i].main.temp).toFixed(0)+'°': '+'+Number(res.data.list[i].main.temp).toFixed(0)+'°';
@@ -136,6 +138,10 @@ function getWeather(){
     sunset.setMinutes(sunset.getMinutes() + offset);
     document.getElementById('sunset').innerText = sunset.getHours()+':'+ sunset.getMinutes()
 
+    document.querySelector('.humidity').innerHTML = res.data.list[0].main.humidity
+    document.querySelector('.humidity-line-fill').style['width'] = res.data.list[0].main.humidity+'%'
+    document.querySelector('.wind').innerHTML = Number(res.data.list[0].wind.speed).toFixed(0)
+
     var wind = res.data.list[0].wind.speed;
     var arrow = document.querySelector('.arrow')
     if (wind >= 0 && wind <= 5) {arrow.style['transform'] = 'rotate(36deg)'} else
@@ -146,6 +152,7 @@ function getWeather(){
 
     document.querySelector('.desc').innerHTML = String(res.data.list[0].weather[0].description)[0].toUpperCase()+String(res.data.list[0].weather[0].description).slice(1)
     document.querySelector('.clouds-value').innerHTML = res.data.list[0].clouds.all
+    document.querySelector('.clouds-block').innerHTML = res.data.list[0].clouds.all
     document.querySelector('.cloud-line-fill').style['width'] = res.data.list[0].clouds.all+'%'
 
 
