@@ -48,8 +48,6 @@ function getCoordintes() {
       var crd = pos.coords;
       var lat = crd.latitude.toString();
       var lon = crd.longitude.toString();
-      lat=41.8919
-      lon=12.5113
       var coordinates = [lat, lon];
       getCity(coordinates);
       return;
@@ -65,7 +63,7 @@ function getCity(coordinates) {
   var lat = coordinates[0];
   var lng = coordinates[1];
   xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.f38452ec70f1325f8ee69261d1d19835&normalizecity=1&lat=" +
-  lat + "&lon=" + lng + "&format=json", true);
+  lat + "&lon=" + lng + "&format=json/", true);
   xhr.send();
   xhr.onreadystatechange = processRequest;
   xhr.addEventListener("readystatechange", processRequest, false);
@@ -81,9 +79,7 @@ function getCity(coordinates) {
   }
 }
 function getWeather(){
-  lat=41.8919
-  lon=12.5113
-  let url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${'b5624ce86e106ad950186fe5bf8adf4b'}`;
+  let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${'b5624ce86e106ad950186fe5bf8adf4b'}`;
     axios.get(url).then(res => {
       console.log(res)
       for(let i=0; i<Number(res.data.cnt);i+=8){
