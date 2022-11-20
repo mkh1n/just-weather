@@ -28,11 +28,27 @@
             </div>
             <div class="bottom">
                 <div class="calendar">
-                    <div class="day 1">Понедельник</div>
-                    <div class="day 2">Вторник</div>
-                    <div class="day 3">Среда</div>
-                    <div class="day 4">Четврег</div>
-                    <div class="day 5">Пятница</div>
+                    <div id="shortName"></div>
+                    <div class="dayBlock" id="1">
+                        <div class=name id="1n"></div>
+                        <div class=dayTemp id="1t"></div>
+                        <div class="dayIcon" id="1i"></div>
+                    </div>
+                    <div class="dayBlock" id="2">
+                        <div class=name id="2n"></div>
+                        <div class=dayTemp id="2t"></div>
+                        <div class="dayIcon" id="2i"></div>
+                    </div>
+                    <div class="dayBlock" id="3">
+                        <div class=name id="3n"></div>
+                        <div class=dayTemp id="3t"></div>
+                        <div class="dayIcon" id="3i"></div>
+                    </div>
+                    <div class="dayBlock" id="4">
+                        <div class=name id="4n"></div>
+                        <div class=dayTemp id="4t"></div>
+                        <div class="dayIcon" id="4i"></div>
+                    </div>
                 </div>
                 <div class="border"></div>
                 <div class="block-wrapper">
@@ -70,7 +86,6 @@
                         <div class="cloud-line"><div class='cloud-line-fill soft'></div></div>
                     </div>
                 </div>
-                
             </div>
             
             
@@ -78,7 +93,6 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="clock.js"></script>
         <script src="weather.js"></script>
-        <script src="city.js"></script>
         <script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
         
     </body>

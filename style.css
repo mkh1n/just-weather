@@ -17,10 +17,6 @@
 
     --purp:linear-gradient(90deg, rgb(97, 13, 207) 0%, rgba(0,43,145,1) 51%, rgba(26,52,186,1) 100%);
     --soft-purp: rgb(202, 165, 252);
-
-
-
-
 }
 body{
     display: flex;
@@ -43,8 +39,23 @@ body{
     box-shadow: rgb(0, 0, 0, 37%) 0px 7px 29px 0px;
 }
 
-.day{
-    background:var(--blue);
+.dayBlock{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background: rgb(255, 255, 255, 0.2);
+    border-radius: 10px 10px;
+    color:#fff;
+    position: relative;
+    padding-bottom: 40px;
+    width: 15%;
+}
+.dayTemp{
+    font-size: 18px;
+}
+.name{
+    font-size: 15px;
 }
 .day .soft{
     background: var(--soft-blue);
@@ -54,8 +65,20 @@ body{
     border-left: 10px solid var(--soft-blue);
     border-right: 10px solid var(--soft-blue);
 }
+.dayIcon{
+    font-family: weather;
+    font-size:50px;
+    bottom:3px;
+    position: absolute;
+}
+#shortName{
+    display: none;
+    z-index: 0;
 
-
+}
+.day{
+    background: var(--blue);
+}
 .night{
     background:var(--purp);
 }
@@ -87,6 +110,14 @@ body{
     background-image: url('lightning.png');
     opacity: 0.3;
 }
+.snow{
+    background-image: url('snow.png');
+    opacity: 0.25;
+}
+.fog{
+    background-image: url('fog.png');
+    opacity: 0.8;
+}
 .weather-desc{
     display: flex;
     flex-direction: row;
@@ -112,7 +143,7 @@ body{
 }
 #weather-icon{
     font-size: 180px;
-    height: 85px;
+    height: 109px;
     line-height: 0;
 }
 .top{
@@ -134,8 +165,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(7px);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
     height: 100%;
     width: 100%;
     border-radius: 20px 20px;
@@ -147,11 +178,7 @@ body{
     z-index: 200;
     width: 90%;
 }
-.day{
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px 10px;
-}
+
 .border{
     width: 90%;
     border-bottom: #fff solid 2px;
@@ -165,11 +192,11 @@ body{
 .icon-name{
     margin: auto 10px;
     line-height: 0.4;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
     border-radius: 20px 20px;
     font-size: 30px; 
-    padding-bottom: 10px
+    padding-bottom: 11px
 }
 .block-header{
     display: flex;
@@ -255,6 +282,9 @@ body{
         height: 80vh;
         width:90vw;
     }
+    #shortName{
+        z-index: 7;
+    }
     .temp{
         font-size: 70px;
     }
@@ -282,6 +312,10 @@ body{
     }
     .block{
         justify-content: unset;
+        padding: 9px;
+    }
+    .block-header{
+        font-size: 15px;
     }
     .speed-container{
         display: flex;
