@@ -48,6 +48,8 @@ function getCoordintes() {
       var crd = pos.coords;
       var lat = crd.latitude.toString();
       var lon = crd.longitude.toString();
+      lat=41.8919
+      lon=12.5113
       var coordinates = [lat, lon];
       getCity(coordinates);
       return;
@@ -57,7 +59,7 @@ function getCoordintes() {
   }
   navigator.geolocation.getCurrentPosition(success, error, options);
 }
-
+var coordinates=[59.9386,30.3141]
 function getCity(coordinates) {
   var xhr = new XMLHttpRequest();
   var lat = coordinates[0];
@@ -79,7 +81,9 @@ function getCity(coordinates) {
   }
 }
 function getWeather(){
-  let url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${'b5624ce86e106ad950186fe5bf8adf4b'}`;
+  lat=41.8919
+  lon=12.5113
+  let url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${'b5624ce86e106ad950186fe5bf8adf4b'}`;
     axios.get(url).then(res => {
       console.log(res)
       for(let i=0; i<Number(res.data.cnt);i+=8){
@@ -110,6 +114,7 @@ function getWeather(){
     var date = new Date();
     document.querySelector('.today').innerHTML = days[date.getDay()]+' '+date.getDate();
     var h = date.getHours();
+    console.log(h)
     var w_id = res.data.list[0].weather[0].id;
     var icon = document.getElementById('weather-icon');
     var bg = document.getElementById('bg')
@@ -132,11 +137,15 @@ function getWeather(){
 
     var sunrise = new Date((res.data.city.sunrise* 1000))
     sunrise.setMinutes(sunrise.getMinutes() + offset);
-    document.getElementById('sunrise').innerText = sunrise.getHours()+':'+ sunrise.getMinutes()
+    document.getElementById('sunrise').innerText = ((sunrise.getHours() >=10)?
+    sunrise.getHours():'0'+sunrise.getHours())+':'+((sunrise.getMinutes()>=10)?
+    sunrise.getMinutes():'0'+sunrise.getMinutes());
 
     var sunset = new Date((res.data.city.sunset * 1000))
     sunset.setMinutes(sunset.getMinutes() + offset);
-    document.getElementById('sunset').innerText = sunset.getHours()+':'+ sunset.getMinutes()
+    document.getElementById('sunset').innerText = ((sunset.getHours() >=10)?
+    sunset.getHours():'0'+sunset.getHours())+':'+((sunset.getMinutes()>=10)?
+    sunset.getMinutes():'0'+sunset.getMinutes());
 
     document.querySelector('.humidity-value').innerHTML = res.data.list[0].main.humidity
     document.querySelector('.humidity-line-fill').style['width'] = res.data.list[0].main.humidity+'%'

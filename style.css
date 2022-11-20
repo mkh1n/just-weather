@@ -33,9 +33,6 @@ body{
     background:var(--norm);
 }
 
-.day{
-    background:var(--blue);
-}
 .day-holder{
     color:#fff;
     display: flex;
@@ -62,9 +59,12 @@ body{
 
 }
 
-
+.day{
+    --norm: linear-gradient(70deg, rgb(23, 147, 230) 0%, rgb(6, 112, 199) 51%,rgb(16, 173, 179) 100%);
+    --soft: rgb(124, 192, 255);
+}
 .night{
-    --norm: linear-gradient(90deg, rgb(97, 13, 207) 0%, rgba(0,43,145,1) 51%, rgba(26,52,186,1) 100%);
+    --norm: linear-gradient(70deg, rgb(97, 13, 207) 0%, rgba(0,43,145,1) 51%, rgba(26,52,186,1) 100%);
     --soft: rgb(202, 165, 252);
 }
 .soft{
@@ -107,6 +107,7 @@ body{
 }
 .name{
     margin-bottom: 3px;
+    font-size: 18px;
 }
 .city{
     font-size: 25px;
@@ -130,14 +131,15 @@ body{
 .sun{
     display: flex;
     font-size: 13px;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: space-evenly;
+    width: 100%;
     height: min-content;
+    margin-top: -10%;
 }
 .sun-icon{
     font-size: 40px;
     height: 47px;
-    margin-top: -70%;
+    
 }
 .mob-top{
     display: none;
@@ -184,6 +186,9 @@ body{
     padding: 10px;
     background: #fff;
     border-radius: 10px 10px;
+}
+.dayTemp{
+    text-align: center;
 }
 .border{
     width: 90%;
@@ -295,7 +300,7 @@ body{
 #sunrise, #sunset{
     font-weight: bold;
 }
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 840px) {
     .weather{
         height:100%;
         width:100%;
