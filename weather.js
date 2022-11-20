@@ -79,7 +79,7 @@ function getCity(coordinates) {
   }
 }
 function getWeather(){
-  let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${'b5624ce86e106ad950186fe5bf8adf4b'}`;
+  let url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${'b5624ce86e106ad950186fe5bf8adf4b'}`;
     axios.get(url).then(res => {
       console.log(res)
       for(let i=0; i<Number(res.data.cnt);i+=8){
