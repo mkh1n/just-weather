@@ -62,7 +62,7 @@ function getCity(coordinates) {
   var xhr = new XMLHttpRequest();
   var lat = coordinates[0];
   var lng = coordinates[1];
-  xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.f38452ec70f1325f8ee69261d1d19835&normalizecity=1&lat=" +
+  xhr.open('GET', "http://us1.locationiq.com/v1/reverse.php?key=pk.f38452ec70f1325f8ee69261d1d19835&normalizecity=1&lat=" +
   lat + "&lon=" + lng + "&format=json/", true);
   xhr.send();
   xhr.onreadystatechange = processRequest;
