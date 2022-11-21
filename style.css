@@ -60,8 +60,8 @@ body{
 }
 
 .day{
-    --norm: linear-gradient(70deg, rgb(23, 147, 230) 0%, rgb(6, 112, 199) 51%,rgb(16, 173, 179) 100%);
-    --soft: rgb(124, 192, 255);
+    --norm: linear-gradient(70deg, rgb(54 152 218) 0%, rgb(82 160 255) 51%,rgb(15 146 182) 100%);
+    --soft: rgb(132 196 255);
 }
 .night{
     --norm: linear-gradient(70deg, rgb(97, 13, 207) 0%, rgba(0,43,145,1) 51%, rgba(26,52,186,1) 100%);
