@@ -61,7 +61,7 @@ body{
 
 .day{
     --norm: linear-gradient(70deg, rgb(54 152 218) 0%, rgb(82 160 255) 51%,rgb(15 146 182) 100%);
-    --soft: rgb(132 196 255);
+    --soft: rgb(102 197 255);
 }
 .night{
     --norm: linear-gradient(70deg, rgb(97, 13, 207) 0%, rgba(0,43,145,1) 51%, rgba(26,52,186,1) 100%);
@@ -79,7 +79,7 @@ body{
 }
 .clouds{
     background-image: url('clouds.png');
-    opacity: 0.3;
+    opacity: 0.2;
 }
 .rain{
     background-image: url('rain.png');
