@@ -10,12 +10,7 @@ window.onload = function(){
     main.classList.remove('night')
   }
 };
-if (window.location.protocol.indexOf('https') == 0){
-  var el = document.createElement('meta')
-  el.setAttribute('http-equiv', 'Content-Security-Policy')
-  el.setAttribute('content', 'upgrade-insecure-requests')
-  document.head.append(el)
-}
+
 var lat =0;
 var lon = 0;
 var mobValue = Number(getComputedStyle(document.getElementById('shortName')).zIndex)
